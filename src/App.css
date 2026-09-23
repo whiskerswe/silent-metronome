@@ -23,12 +23,20 @@ body {
   overflow: hidden;
 }
 
-
 .metronome {
   position: relative;
-  width: min(400px, 100vw);
+  width: 100%;
   aspect-ratio: 4 / 3;
   margin: 0;
+}
+
+.metronome-layout {
+  width: min(400px, 100vw);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .trail-canvas,
@@ -46,4 +54,74 @@ body {
 
 .pendulum-canvas {
   z-index: 1;
+}
+
+.tempo-control {
+  width: min(320px, 80vw);
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+
+  color: #A98F88;
+}
+
+.tempo-value {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.tempo-input {
+  width: 48px;
+
+  padding: 0;
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: #A98F88;
+
+  font: inherit;
+  font-size: 18px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+
+  appearance: textfield;
+}
+
+.tempo-input::-webkit-inner-spin-button,
+.tempo-input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.tempo-input:focus {
+  color: #D3B4AA;
+}
+
+.tempo-unit {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  opacity: 0.65;
+}
+
+.tempo-slider {
+  width: 100%;
+  height: 24px;
+  margin: 0;
+
+  accent-color: #A98F88;
+  cursor: pointer;
+}
+
+.tempo-name {
+  align-self: center;
+
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
 }
