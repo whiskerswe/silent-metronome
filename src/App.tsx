@@ -6,7 +6,7 @@ const MIN_BPM = 40
 const MAX_BPM = 208
 
 const MAX_ANGLE = Math.PI / 6
-const ARM_LENGTH = 200
+const ARM_LENGTH = 270
 const TRAIL_DURATION = 350
 
 const PENDULUM_COLOR = '#D3B4AA'
@@ -17,9 +17,9 @@ type TrailFrame = {
 }
 
 function withOpacity(hex: string, opacity: number): string {
-  const r = parseInt(hex.slice(1, 3), 16)
-  const g = parseInt(hex.slice(3, 5), 16)
-  const b = parseInt(hex.slice(5, 7), 16)
+  const r = Number.parseInt(hex.slice(1, 3), 16)
+  const g = Number.parseInt(hex.slice(3, 5), 16)
+  const b = Number.parseInt(hex.slice(5, 7), 16)
 
   return `rgba(${r}, ${g}, ${b}, ${opacity})`
 }
@@ -36,7 +36,7 @@ function App() {
     bpmRef.current = value
   }
 
-  function getTempoName(bpm: number): string {
+  const getTempoName = (bpm: number): string => {
     if (bpm < 50) return 'Largo'
     if (bpm < 60) return 'Larghetto'
     if (bpm < 72) return 'Adagio'
@@ -46,7 +46,7 @@ function App() {
     if (bpm < 144) return 'Allegro'
     if (bpm < 176) return 'Vivace'
     return 'Presto'
-  }
+  };
 
   useEffect(() => {
     const trailCanvas = trailCanvasRef.current
@@ -169,7 +169,7 @@ function App() {
       ctx.lineTo(tipX, tipY)
 
       ctx.strokeStyle = PENDULUM_COLOR
-      ctx.lineWidth = 3
+      ctx.lineWidth = 10
       ctx.lineCap = 'round'
       ctx.stroke()
 
