@@ -1,0 +1,31 @@
+VitePWA({
+  registerType: 'autoUpdate',
+  manifest: {
+    name: 'Silent Metronome',
+    id: '/silent-metronome/',
+    short_name: 'Metronome',
+    start_url: '/silent-metronome/',
+    scope: '/silent-metronome/',
+    display: 'standalone',
+    theme_color: '#1c1713',
+    background_color: '#1c1713',
+    icons: [
+      {
+        src: 'icons/lyre192.png',
+        sizes: '192x192',
+        type: 'image/png'
+      },
+      {
+        src: 'icons/lyre512.png',
+        sizes: '512x512',
+        type: 'image/png'
+      },
+      {
+        src: 'icons/lyremascable512.png',
+        sizes: '512x512',
+        type: 'image/png',
+        purpose: 'maskable'
+      }
+    ]
+  }
+})
